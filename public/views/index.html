@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="/scripts/client.js" charset="utf-8"></script>
+  <script src="/scripts/giphy-service.js" charset="utf-8"></script>
   <title></title>
 </head>
 <body  ng-app="giphyApp" ng-controller="giphyController as giphy">
   <button ng-click="giphy.randomGiphy()">Random</button>
-  <img ng-show="giphy.imageUrl" ng-src="{{giphy.imageUrl}}"/>
 </br>
 </br>
 </br>
@@ -23,6 +23,10 @@
         </li>
     </ul>
   </form>
+  </div>
+
+  <div id="displaygiphy">
+    <img ng-show="giphy.imageUrl" ng-src="{{giphy.imageUrl}}"/>
   </div>
 </body>
 </html>
