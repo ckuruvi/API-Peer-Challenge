@@ -5,31 +5,30 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="/scripts/client.js" charset="utf-8"></script>
   <script src="/scripts/giphy-service.js" charset="utf-8"></script>
-  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/views/styles.css">
+  <title>Giphys</title>
 </head>
-<body  ng-app="giphyApp" ng-controller="giphyController as giphy">
-  <button ng-click="giphy.randomGiphy()">Random</button>
+<body  class="container text-center" ng-app="giphyApp" ng-controller="giphyController as giphy">
+  <button  class="btn btn-info" ng-click="giphy.randomGiphy()">Random</button>
 </br>
 </br>
 </br>
-  <div>
-    <form>
+<div>
+  <form>
     <label>Search</label>
     <input type="text" ng-model="giphy.search"/>
-    <button type="submit" ng-click="giphy.searchGiphy()">Search!</button>
-    <ul>
-      <li ng-repeat="individualGiphy in giphy.giphyList">
-          <a href="{{individualGiphy.images.original.url}}"/>{{individualGiphy.id}}</a>
-        </li>
+    <button  class="btn btn-info" type="submit" ng-click="giphy.searchGiphy()">Search!</button>
+    <ul >
+      <li  ng-repeat="individualGiphy in giphy.giphyList">
+        <a href="{{individualGiphy.images.original.url}}"/>{{individualGiphy.id}}</a>
+      </li>
     </ul>
   </form>
-  </div>
+</div>
 
-  <div id="displaygiphy">
-    <img ng-show="giphy.imageUrl" ng-src="{{giphy.imageUrl}}"/>
-  </div>
+<div id="displaygiphy">
+  <img ng-show="giphy.imageUrl" ng-src="{{giphy.imageUrl}}"/>
+</div>
 </body>
 </html>
-
-
-<!-- <img ng-show="individualGiphy.images.original.url" ng-src="{{individualGiphy.images.original.url}}" />-->
